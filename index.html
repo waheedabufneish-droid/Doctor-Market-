@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#10251d">
+<title>دكتور ماركت | طلبات التجار</title>
+<style>
+:root{--forest:#10251d;--forest2:#193b2c;--green:#2c8a5b;--lime:#d8f36a;--cream:#f6f5ef;--paper:#fffefa;--ink:#17251e;--muted:#77847b;--line:#e6e9e1;--red:#c64c43;--shadow:0 18px 50px #10251d12}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:Tahoma,Arial,sans-serif}
+button,input,select,textarea{font:inherit}button{cursor:pointer}
+.topbar{background:var(--forest);color:white;padding:15px max(18px,calc((100% - 1180px)/2));display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:11px}.brand-mark{width:43px;height:43px;border-radius:14px;background:var(--lime);color:var(--forest);display:grid;place-items:center;font-size:23px}.brand-name{font-weight:900;font-size:21px;letter-spacing:-.5px}.brand small{display:block;color:#c1d1c6;font-size:11px;margin-top:4px}
+.top-actions{display:flex;gap:9px}.top-btn{border:1px solid #ffffff35;background:#ffffff12;color:white;border-radius:12px;padding:10px 14px;font-weight:bold}.top-btn.cart-btn{background:var(--lime);color:var(--forest);border-color:var(--lime)}
+main{max-width:1180px;margin:auto;padding:25px 18px 60px}
+.hero{position:relative;overflow:hidden;border-radius:27px;background:linear-gradient(115deg,#10251d 0%,#1e4935 72%,#2b6546 100%);color:white;padding:38px 35px;display:grid;grid-template-columns:1.4fr .8fr;align-items:center;gap:20px;min-height:255px;box-shadow:var(--shadow)}
+.hero:after{content:"";position:absolute;width:310px;height:310px;border:1px solid #ffffff20;border-radius:50%;left:7%;top:-130px;box-shadow:0 0 0 35px #ffffff08,0 0 0 75px #ffffff06}
+.eyebrow{color:var(--lime);font-size:12px;font-weight:bold;letter-spacing:.5px}.hero h1{font-size:clamp(27px,4vw,42px);line-height:1.35;margin:12px 0}.hero p{color:#d1ded5;line-height:1.9;margin:0;max-width:570px}.hero-art{position:relative;z-index:1;display:flex;justify-content:center;align-items:center}.hero-orb{width:175px;height:175px;border-radius:50%;background:linear-gradient(145deg,#e9f4d3,#a8d58a);display:grid;place-items:center;font-size:82px;box-shadow:0 20px 50px #0003}
+.stats{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.stat{border:1px solid #ffffff28;border-radius:12px;padding:9px 13px;color:#e5eee8;font-size:12px}.stat b{color:var(--lime);font-size:14px;margin-left:5px}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:30px 0 15px;flex-wrap:wrap}.section-head h2{font-size:23px;margin:0}.section-head p{margin:6px 0 0;color:var(--muted);font-size:13px}
+.tools{display:flex;gap:10px;margin:17px 0 18px}.search-wrap{position:relative;flex:1}.search-wrap span{position:absolute;right:14px;top:12px;color:var(--muted)}.tools input,.tools select,.field input,.field textarea,.field select,.admin-form input,.admin-form select{width:100%;border:1px solid var(--line);background:var(--paper);border-radius:13px;padding:13px 14px;outline:none;color:var(--ink)}.tools input{padding-right:42px}.tools input:focus,.field input:focus,.field textarea:focus,.admin-form input:focus{border-color:var(--green);box-shadow:0 0 0 3px #2c8a5b16}.tools select{max-width:190px}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.card{background:var(--paper);border:1px solid var(--line);border-radius:19px;padding:13px;display:flex;flex-direction:column;transition:.2s;min-width:0}.card:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:#cbd8cc}.product-visual{height:145px;border-radius:14px;background:linear-gradient(145deg,#edf4e9,#e0ebdc);display:grid;place-items:center;font-size:61px;position:relative;overflow:hidden}.product-visual:after{content:"";position:absolute;width:110px;height:110px;border:1px solid #fff9;border-radius:50%;right:-28px;top:-35px}.category-pill{position:absolute;bottom:9px;right:9px;background:#ffffffd9;color:var(--forest2);font-size:10px;padding:5px 9px;border-radius:20px;font-weight:bold}.card h3{font-size:15px;line-height:1.6;margin:13px 2px 4px}.meta{color:var(--muted);font-size:11px}.price{font-size:18px;font-weight:900;color:var(--forest2);margin:12px 2px}.price small{font-size:10px;color:var(--muted);font-weight:normal}.btn{border:0;border-radius:12px;padding:12px 14px;font-weight:bold;background:var(--forest2);color:white;transition:.2s}.btn:hover{background:var(--green)}.btn.light{background:#edf3eb;color:var(--forest2)}.btn.danger{background:#fff0ee;color:var(--red)}.btn.lime{background:var(--lime);color:var(--forest)}
+.empty{grid-column:1/-1;text-align:center;background:var(--paper);padding:35px;border-radius:16px;color:var(--muted)}
+.layout{display:grid;grid-template-columns:1.2fr .8fr;gap:16px;margin-top:28px;align-items:start}.panel{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:20px;box-shadow:0 8px 30px #10251d08}.panel h2{font-size:19px;margin:0 0 16px}.cart-empty{color:var(--muted);background:#f7f8f3;border-radius:12px;padding:18px;text-align:center;font-size:13px}.cart-row{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid var(--line)}.cart-row:last-child{border:0}.cart-row b{font-size:13px}.cart-row .meta{margin-top:4px}.qty{display:flex;align-items:center;gap:8px;white-space:nowrap}.qty button{border:1px solid var(--line);background:white;border-radius:8px;width:28px;height:28px;font-weight:bold}.total{display:flex;justify-content:space-between;border-top:1px dashed #cbd5ca;margin-top:12px;padding-top:15px;font-weight:900;font-size:17px;color:var(--forest2)}
+.field{display:grid;gap:7px;margin:12px 0}.field label{font-size:12px;color:var(--muted);font-weight:bold}.field textarea{min-height:78px;resize:vertical}.full{width:100%;margin-top:9px}.hint{color:var(--muted);font-size:11px;line-height:1.8;margin-top:10px}.notice{padding:12px;border-radius:12px;background:#edf7e9;color:#285d38;margin-top:12px;font-size:13px;line-height:1.7}
+footer{background:var(--forest);color:#d5e0d8;text-align:center;padding:25px 15px;font-size:12px;line-height:2}footer b{color:var(--lime)}
+.modal-backdrop{position:fixed;inset:0;background:#07130dc9;z-index:20;display:none;align-items:center;justify-content:center;padding:15px}.modal-backdrop.show{display:flex}.modal{background:var(--paper);border-radius:20px;padding:22px;width:min(680px,100%);max-height:90vh;overflow:auto;box-shadow:0 25px 80px #0005}.modal-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}.modal-head h2{margin:0;font-size:20px}.close{border:0;background:#edf1eb;border-radius:10px;width:35px;height:35px;font-size:20px}.admin-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.admin-form{display:grid;gap:9px}.admin-list{border-top:1px solid var(--line);margin-top:18px;padding-top:14px}.admin-item{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px solid var(--line);font-size:13px}.admin-item-actions{display:flex;gap:6px}.admin-item-actions button{padding:7px 9px;font-size:11px}.security-note{background:#fff6df;color:#79551b;border-radius:12px;padding:11px;font-size:11px;line-height:1.8;margin:12px 0}
+@media(max-width:850px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.hero{grid-template-columns:1fr .5fr}.layout{grid-template-columns:1fr}}
+@media(max-width:600px){main{padding:15px 12px 40px}.topbar{padding:12px}.brand-name{font-size:18px}.hero{padding:25px 20px;grid-template-columns:1fr;min-height:0}.hero-art{display:none}.hero h1{font-size:28px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.card{padding:9px;border-radius:15px}.product-visual{height:115px;font-size:49px}.card h3{font-size:13px}.price{font-size:16px}.tools{flex-direction:column}.tools select{max-width:none}.section-head h2{font-size:20px}.panel{padding:15px}.admin-grid{grid-template-columns:1fr}.top-btn{padding:9px 10px;font-size:12px}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><div class="brand-mark">🛒</div><div><div class="brand-name">دكتور ماركت</div><small>بوابتك السهلة لطلبات التجار</small></div></div>
+  <div class="top-actions"><button class="top-btn" onclick="openAdmin()">⚙ إدارة المعروضات</button><button class="top-btn cart-btn" onclick="document.querySelector('#cart').scrollIntoView({behavior:'smooth'})">🧺 السلة <span id="count">0</span></button></div>
+</header>
+<main>
+  <section class="hero">
+    <div><div class="eyebrow">تجربة طلب أسهل وأسرع</div><h1>كل احتياجات محلك<br>في طلب واحد.</h1><p>اختار المنتجات والكميات، اكتب بيانات محلك، وابعت طلبك مباشرة على واتساب بخطوات بسيطة.</p><div class="stats"><div class="stat"><b>01</b> اختار الأصناف</div><div class="stat"><b>02</b> حدد الكمية</div><div class="stat"><b>03</b> ابعت طلبك</div></div></div>
+    <div class="hero-art"><div class="hero-orb">🥛</div></div>
+  </section>
+  <section>
+    <div class="section-head"><div><h2>تصفح المنتجات</h2><p>اختار الأصناف اللي محتاجها لمحلّك</p></div><div class="meta" id="productCount"></div></div>
+    <div class="tools"><div class="search-wrap"><span>⌕</span><input id="search" placeholder="دور على اسم المنتج..." oninput="render()"></div><select id="category" onchange="render()"><option value="all">كل الأقسام</option><option>ألبان</option><option>زبادي</option><option>عصائر</option><option>جبن</option></select></div>
+    <section class="grid" id="catalog"></section>
+  </section>
+  <section class="layout">
+    <div class="panel" id="cart"><h2>🧺 تفاصيل طلبك</h2><div id="items"></div><div class="total"><span>الإجمالي التقديري</span><span id="total">0 ج.م</span></div><p class="hint">الأسعار المعروضة تجريبية وقابلة للتعديل من لوحة الإدارة.</p></div>
+    <div class="panel"><h2>📦 بيانات الاستلام</h2>
+      <div class="field"><label>اسم العميل / المحل *</label><input id="name" placeholder="اكتب اسمك أو اسم المحل"></div>
+      <div class="field"><label>رقم الموبايل *</label><input id="phone" type="tel" placeholder="01xxxxxxxxx"></div>
+      <div class="field"><label>عنوان التسليم *</label><textarea id="address" placeholder="المحافظة والمنطقة والشارع"></textarea></div>
+      <div class="field"><label>ملاحظات إضافية</label><textarea id="notes" placeholder="أي تفاصيل تحب تضيفها (اختياري)"></textarea></div>
+      <button class="btn full" onclick="sendOrder()">إرسال الطلب على واتساب ←</button><div id="msg"></div>
+    </div>
+  </section>
+</main>
+<footer>دكتور ماركت © 2026 — منصة طلبات التجار<br><b>تطوير قاسم بو نجاح</b></footer>
+
+<div class="modal-backdrop" id="adminModal" onclick="if(event.target===this)closeAdmin()">
+ <div class="modal"><div class="modal-head"><h2>⚙ لوحة إدارة المعروضات</h2><button class="close" onclick="closeAdmin()">×</button></div>
+  <div id="loginArea"><p class="meta">أدخل كلمة مرور الإدارة للدخول وتعديل المنتجات والأسعار.</p><div class="field"><label>كلمة مرور الإدارة</label><input id="adminPass" type="password" placeholder="كلمة المرور" onkeydown="if(event.key==='Enter')loginAdmin()"></div><button class="btn full" onclick="loginAdmin()">دخول لوحة الإدارة</button><div id="loginError"></div></div>
+  <div id="adminArea" style="display:none">
+   <div class="security-note">تنبيه: هذه نسخة HTML بدون خادم. كلمة المرور وحفظ التعديلات محليان في هذا المتصفح فقط، وليسا حماية حقيقية ضد الفحص التقني أو التعديل من خارج الموقع. لجعل الإدارة خاصة بك فعليًا ومتزامنة على كل الأجهزة، يلزم ربط الموقع بخادم وقاعدة بيانات وتسجيل دخول آمن.</div>
+   <h3 style="font-size:15px">إضافة منتج أو تعديل منتج</h3>
+   <div class="admin-form">
+    <input id="editId" type="hidden">
+    <div class="admin-grid"><input id="pName" placeholder="اسم المنتج"><select id="pCategory"><option>ألبان</option><option>زبادي</option><option>عصائر</option><option>جبن</option></select></div>
+    <div class="admin-grid"><input id="pPrice" type="number" min="0" step=".01" placeholder="السعر بالجنيه"><input id="pUnit" placeholder="الوحدة / الحجم (مثال: عبوة 1 لتر)"></div>
+    <div class="admin-grid"><input id="pEmoji" placeholder="رمز المنتج (مثال: 🥛)" maxlength="8"><button class="btn" onclick="saveProduct()">حفظ المنتج</button></div>
+    <button class="btn light" onclick="resetProductForm()">تفريغ الحقول</button>
+   </div>
+   <div class="admin-list"><h3 style="font-size:15px">المنتجات الحالية</h3><div id="adminProducts"></div></div>
+   <button class="btn danger full" onclick="logoutAdmin()">تسجيل خروج الإدارة</button>
+  </div>
+ </div>
+</div>
+<script>
+const COMPANY_WHATSAPP="201094036814";
+const ADMIN_PASSWORD="Qasem@2026"; // غيّر كلمة المرور من هنا قبل نشر الموقع
+const defaultProducts=[
+{id:1,name:"لبن المراعي كامل الدسم",category:"ألبان",unit:"عبوة",price:35,emoji:"🥛"},
+{id:2,name:"لبن المراعي خالي الدسم",category:"ألبان",unit:"عبوة",price:36,emoji:"🥛"},
+{id:3,name:"زبادي المراعي",category:"زبادي",unit:"عبوة",price:10,emoji:"🥣"},
+{id:4,name:"زبادي المراعي بالفواكه",category:"زبادي",unit:"عبوة",price:14,emoji:"🍓"},
+{id:5,name:"عصير المراعي",category:"عصائر",unit:"عبوة",price:15,emoji:"🧃"},
+{id:6,name:"جبن المراعي شرائح",category:"جبن",unit:"عبوة",price:45,emoji:"🧀"},
+{id:7,name:"جبن المراعي قابل للدهن",category:"جبن",unit:"عبوة",price:40,emoji:"🧀"},
+{id:8,name:"لبن المراعي بالشوكولاتة",category:"ألبان",unit:"عبوة",price:20,emoji:"🍫"}
+];
+let products=loadProducts(),cart={},adminUnlocked=false;
+function loadProducts(){try{const x=JSON.parse(localStorage.getItem("dm_products"));return Array.isArray(x)?x:defaultProducts.map(p=>({...p}));}catch(e){return defaultProducts.map(p=>({...p}));}}
+function persist(){localStorage.setItem("dm_products",JSON.stringify(products));}
+const eg=n=>Number(n||0).toLocaleString("en-EG",{maximumFractionDigits:2})+" ج.م";
+function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+function render(){
+ const q=document.querySelector("#search").value.trim().toLowerCase(),c=document.querySelector("#category").value;
+ const arr=products.filter(p=>(c==="all"||p.category===c)&&p.name.toLowerCase().includes(q));
+ document.querySelector("#productCount").textContent=products.length+" منتج";
+ document.querySelector("#catalog").innerHTML=arr.map(p=>`<article class="card"><div class="product-visual">${esc(p.emoji||"📦")}<span class="category-pill">${esc(p.category)}</span></div><h3>${esc(p.name)}</h3><div class="meta">${esc(p.unit||"")}</div><div class="price">${eg(p.price)} <small>/ الوحدة</small></div><button class="btn" onclick="add(${Number(p.id)})">+ أضف للطلب</button></article>`).join("")||'<div class="empty">مفيش منتجات مطابقة للبحث.</div>';
+}
+function add(id){cart[id]=(cart[id]||0)+1;drawCart()}
+function qty(id,d){cart[id]=(cart[id]||0)+d;if(cart[id]<=0)delete cart[id];drawCart()}
+function drawCart(){
+ let total=0,count=0,ids=Object.keys(cart);
+ document.querySelector("#items").innerHTML=ids.length?ids.map(id=>{let p=products.find(x=>x.id==id);if(!p)return "";let n=cart[id];total+=Number(p.price)*n;count+=n;return `<div class="cart-row"><div><b>${esc(p.emoji)} ${esc(p.name)}</b><div class="meta">${eg(p.price)} × ${n}</div></div><div class="qty"><button onclick="qty(${Number(id)},-1)">−</button><b>${n}</b><button onclick="qty(${Number(id)},1)">+</button></div></div>`}).join(""):'<div class="cart-empty">السلة لسه فاضية — أضف منتجات من القائمة.</div>';
+ document.querySelector("#total").textContent=eg(total);document.querySelector("#count").textContent=count;
+}
+function sendOrder(){
+ if(!Object.keys(cart).length){alert("أضف منتجات للطلب الأول");return}
+ const name=document.querySelector("#name").value.trim(),phone=document.querySelector("#phone").value.trim(),address=document.querySelector("#address").value.trim(),notes=document.querySelector("#notes").value.trim();
+ if(!name||!phone||!address){alert("من فضلك اكتب الاسم ورقم الموبايل والعنوان");return}
+ const chosen=Object.keys(cart).map(id=>{const p=products.find(x=>x.id==id);return p?`• ${p.name} — الكمية: ${cart[id]} — ${eg(p.price*cart[id])}`:"";}).filter(Boolean);
+ const total=Object.keys(cart).reduce((s,id)=>{const p=products.find(x=>x.id==id);return s+(p?Number(p.price)*cart[id]:0)},0);
+ const message=`طلب جديد من دكتور ماركت\nاسم العميل/المحل: ${name}\nرقم الهاتف: ${phone}\nالعنوان: ${address}\nالأصناف:\n${chosen.join("\n")}\nالإجمالي التقديري: ${eg(total)}\nملاحظات: ${notes||"لا يوجد"}`;
+ window.open("https://wa.me/"+COMPANY_WHATSAPP+"?text="+encodeURIComponent(message),"_blank");
+ document.querySelector("#msg").innerHTML='<div class="notice">جهزنا رسالة طلبك على واتساب. راجع التفاصيل واضغط إرسال لتأكيد الطلب.</div>';
+}
+function openAdmin(){document.querySelector("#adminModal").classList.add("show");document.querySelector("#adminPass").value="";document.querySelector("#loginError").textContent="";if(adminUnlocked)showAdmin();}
+function closeAdmin(){document.querySelector("#adminModal").classList.remove("show");}
+function loginAdmin(){if(document.querySelector("#adminPass").value===ADMIN_PASSWORD){adminUnlocked=true;showAdmin();}else{document.querySelector("#loginError").innerHTML='<div class="notice" style="background:#fff0ee;color:#a43d35">كلمة المرور غير صحيحة.</div>';}}
+function showAdmin(){document.querySelector("#loginArea").style.display="none";document.querySelector("#adminArea").style.display="block";drawAdminProducts();}
+function logoutAdmin(){adminUnlocked=false;document.querySelector("#loginArea").style.display="block";document.querySelector("#adminArea").style.display="none";resetProductForm();}
+function drawAdminProducts(){document.querySelector("#adminProducts").innerHTML=products.map(p=>`<div class="admin-item"><div><b>${esc(p.emoji)} ${esc(p.name)}</b><div class="meta">${eg(p.price)} · ${esc(p.category)}</div></div><div class="admin-item-actions"><button class="btn light" onclick="editProduct(${Number(p.id)})">تعديل</button><button class="btn danger" onclick="deleteProduct(${Number(p.id)})">حذف</button></div></div>`).join("")||'<p class="meta">لا توجد منتجات.</p>';}
+function saveProduct(){
+ if(!adminUnlocked)return;
+ const name=document.querySelector("#pName").value.trim(),category=document.querySelector("#pCategory").value,price=Number(document.querySelector("#pPrice").value),unit=document.querySelector("#pUnit").value.trim(),emoji=document.querySelector("#pEmoji").value.trim()||"📦",id=document.querySelector("#editId").value;
+ if(!name||document.querySelector("#pPrice").value===""||!Number.isFinite(price)||price<0){alert("اكتب اسم المنتج وسعر صحيح.");return}
+ if(id){const p=products.find(x=>x.id==Number(id));if(p)Object.assign(p,{name,category,price,unit,emoji});}
+ else products.push({id:Date.now(),name,category,price,unit,emoji});
+ persist();render();drawAdminProducts();resetProductForm();
+}
+function editProduct(id){const p=products.find(x=>x.id===id);if(!p)return;document.querySelector("#editId").value=p.id;document.querySelector("#pName").value=p.name;document.querySelector("#pCategory").value=p.category;document.querySelector("#pPrice").value=p.price;document.querySelector("#pUnit").value=p.unit||"";document.querySelector("#pEmoji").value=p.emoji||"";document.querySelector("#pName").focus();}
+function deleteProduct(id){if(!adminUnlocked||!confirm("متأكد إنك عايز تحذف المنتج؟"))return;products=products.filter(p=>p.id!==id);delete cart[id];persist();render();drawCart();drawAdminProducts();}
+function resetProductForm(){["editId","pName","pPrice","pUnit","pEmoji"].forEach(id=>document.querySelector("#"+id).value="");document.querySelector("#pCategory").value="ألبان";}
+render();drawCart();
+</script>
+</body></html>
